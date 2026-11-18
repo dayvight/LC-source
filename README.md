@@ -73,6 +73,22 @@ scripts/build_source.py      构建脚本
 
 工作流每 6 小时自动运行一次，也可在 Actions 页面手动触发。
 
+## 自动更新
+
+上游发新版后，源会自动跟上，不需要手动做什么：
+
+- **定时**：每 6 小时跑一次（UTC 0/6/12/18 点，即北京时间 08:00 / 14:00 / 20:00 / 02:00）
+- **触发**：Actions 重新执行 `scripts/build_source.py` → 抓 `apps.txt` 里每个仓库的最新正式版 → 有变化就自动 commit `chore: refresh sources` 并推送
+- **改配置也会触发**：`apps.txt`、`apps/<应用>/meta.json`、`apps/<应用>/icon.png`、构建脚本或工作流本身被修改时立即重建
+- **手动**：Actions → Update source → Run workflow
+
+两个需要注意的地方：
+
+1. 公开仓库的定时工作流在**连续 60 天没有任何提交**后会被 GitHub 自动停用（会发邮件通知）。届时在 Actions 页面点一下重新启用即可。
+2. `raw.githubusercontent.com` 有 CDN 缓存，推送后**大约 5 分钟内**客户端可能仍读到旧内容；LiveContainer 自身也会缓存源，需要在源页面下拉刷新。
+
+已知限制：`bundleIdentifier` 和 `minOSVersion` 来自手写的 `meta.json`，不会在每次构建时重新解包 IPA 核对。上游哪天提高了最低系统版本，需要手动改 `meta.json`。
+
 ## 本地重建
 
 ```bash

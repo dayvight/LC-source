@@ -12,6 +12,8 @@ on:
     branches: [main]
     paths:
       - 'apps.txt'
+      - 'apps/**/meta.json'
+      - 'apps/**/icon.png'
       - 'scripts/build_source.py'
       - '.github/workflows/update.yml'
 
@@ -25,6 +27,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
 
