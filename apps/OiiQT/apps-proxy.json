@@ -11,7 +11,7 @@
       "bundleIdentifier": "com.gangz1o.oiiqt",
       "developerName": "gangz1o",
       "subtitle": "在 iPhone / iPad 上管理 qBittorrent、Transmission 与 MoviePilot",
-      "localizedDescription": "<p>用 SwiftUI 构建的下载服务器管理客户端。</p><p>支持连接 qBittorrent 与 Transmission 管理种子任务、查看流量与存储面板、配置 RSS 自动下载，并可连接 MoviePilot 浏览与搜索影视资源。无会员、无内购、不限服务器数量。</p>",
+      "localizedDescription": "用 SwiftUI 构建的下载服务器管理客户端。\n支持连接 qBittorrent 与 Transmission 管理种子任务、查看流量与存储面板、配置 RSS 自动下载，并可连接 MoviePilot 浏览与搜索影视资源。无会员、无内购、不限服务器数量。",
       "iconURL": "https://ghproxy.net/https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/apps/OiiQT/icon.png",
       "tintColor": "#F59E0B",
       "category": "utilities",
@@ -23,7 +23,8 @@
           "date": "2026-11-16T01:54:42+00:00",
           "downloadURL": "https://ghproxy.net/https://github.com/gangz1o/OiiQT/releases/download/v1.0.4/OiiQT-unsigned.ipa",
           "size": 8001978,
-          "minOSVersion": "18.0"
+          "minOSVersion": "18.0",
+          "localizedDescription": "English\n\n• OiiQT checks GitHub Releases at launch. When a newer IPA is available, a badge appears on the Settings tab.\n• Open Settings → Check for Updates to check manually, open SideStore or AltStore Classic to sign and install, or download the IPA.\n\nDownload OiiQT-unsigned.ipa for your first install of this version. It requires signing and supports iOS/iPadOS 18.0 or later. App version 1.0.4 (22).\n\n中文\n\n• OiiQT 启动时会检查 GitHub Releases。发现可下载的新版本后，「设置」标签会显示提示。\n• 在「设置 → 检查更新」可手动检查，打开 SideStore 或 AltStore Classic 签名安装，也可以直接下载 IPA。\n\n首次安装本版请下载 OiiQT-unsigned.ipa 并签名安装。要求 iOS/iPadOS 18.0 或更新版本，应用版本为 1.0.4 (22)。"
         }
       ],
       "appPermissions": {

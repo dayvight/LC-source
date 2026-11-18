@@ -33,6 +33,7 @@ BRANCH = os.environ.get("SOURCE_BRANCH", "main")
 PROXY = os.environ.get("GH_PROXY", "https://ghproxy.net/")
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 MAX_VERSIONS = int(os.environ.get("MAX_VERSIONS", "1"))  # 1 = latest only; raise to keep rollback versions
+MAX_CHANGELOG = int(os.environ.get("MAX_CHANGELOG", "1200"))  # chars of release notes kept per version
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -82,6 +83,50 @@ def norm_version(tag):
             break
         out.append(str(int(num)))
     return ".".join(out) if out else tag.lstrip("vV")
+
+
+MD_IMAGE_RE = re.compile(r"!\[[^\]]*\]\([^)]*\)")
+MD_LINK_RE = re.compile(r"\[([^\]]+)\]\([^)]*\)")
+HTML_TAG_RE = re.compile(r"<[^>]+>")
+MD_RULE_RE = re.compile(r"^(?:[-*_]\s*){3,}$")
+
+
+def release_notes(body, limit=None):
+    """Turn a release's markdown body into the plain text clients actually draw.
+
+    AltStore-family clients assign `version.localizedDescription` straight to a
+    text view, so markdown or HTML from the release body would show up verbatim.
+    """
+    limit = MAX_CHANGELOG if limit is None else limit
+    if not body:
+        return ""
+    text = body.replace("\r\n", "\n").replace("\r", "\n")
+    text = MD_IMAGE_RE.sub("", text)
+    text = MD_LINK_RE.sub(r"\1", text)
+    text = HTML_TAG_RE.sub("", text)
+    text = text.replace("**", "").replace("__", "").replace("`", "")
+
+    lines = []
+    for line in text.split("\n"):
+        s = line.rstrip()
+        t = s.strip()
+        if t.startswith("```") or MD_RULE_RE.match(t):
+            continue
+        if t.startswith("|"):
+            continue  # markdown table rows (download matrices) read as noise
+        if re.match(r"^#{1,6}\s", t):
+            s = t.lstrip("#").strip()
+        elif t.startswith(">"):
+            s = t[1:].strip()
+        elif t.startswith(("- ", "* ", "+ ")):
+            s = "• " + t[2:].strip()
+        lines.append(s)
+
+    text = re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
+    if len(text) > limit:
+        cut = text[:limit]
+        text = (cut[:cut.rfind("\n")] if "\n" in cut else cut).rstrip() + " …"
+    return text
 
 
 def version_key(v):
@@ -157,6 +202,7 @@ def build_app(meta):
                            f"{rel['tag_name']}/{asset['name']}",
             "size": asset["size"],
             "minOSVersion": extra.get("min_os", "15.0"),
+            "localizedDescription": release_notes(rel.get("body") or ""),
         })
 
     # Keep by version number, not by API order: a release re-published later
@@ -171,14 +217,15 @@ def build_app(meta):
     print(f"  {len(versions)} version(s): {[v['version'] for v in versions]}")
     icon_url = raw_url(f"apps/{name}/icon.png")
     desc = extra.get("description", f"Source for {name}.")
-    desc_html = "".join(f"<p>{p}</p>" for p in desc.split("\n") if p.strip())
 
     app = {
         "name": name,
         "bundleIdentifier": extra.get("bundle") or f"com.example.{name.lower()}",
         "developerName": extra.get("developer") or repo.split("/")[0],
         "subtitle": extra.get("subtitle", ""),
-        "localizedDescription": desc_html,
+        # Plain text: AltStore/Feather draw this in a text view, so HTML tags
+        # would be shown literally instead of being rendered.
+        "localizedDescription": desc.strip(),
         "iconURL": icon_url,
         "tintColor": extra.get("tint", "#3B82F6"),
         "category": extra.get("category", "utilities"),

@@ -89,6 +89,22 @@ GITHUB_TOKEN="$(gh auth token)" SOURCE_REPO=dayvight/LC-source python3 scripts/b
 - 只收录 `.ipa` 资源，自动忽略 APK / DMG / EXE 等其它平台构建
 - 版本号统一规范为纯数字（如 `v3.0.38` → `3.0.38`），因为 AltStore 要求如此
 
+## 更新日志
+
+每个版本的说明写进 `versions[].localizedDescription`，内容取自对应 GitHub release 的正文（`body`），自动做 markdown → 纯文本转换（去掉 `#`、`**`、表格、链接语法）并截断到 `MAX_CHANGELOG`（默认 1200 字符）。
+
+用**纯文本**而不是 HTML 是有意为之：AltStore、SideStore、Feather 都是把 `localizedDescription` 直接塞进 text view，写 HTML 会原样显示标签。
+
+客户端支持情况：
+
+| 客户端 | 是否显示版本说明 |
+| --- | --- |
+| AltStore / SideStore | 显示（App 详情页「版本说明」+ 我的 App 更新提示） |
+| Feather / Ksign / NexStore | 显示（Version History 页） |
+| LiveContainer | **不显示**（源列表只有图标、名称、版本号，无详情页） |
+
+所以这份日志主要是给「用 SideStore 装 Breeze」这类场景准备的。
+
 ## 免责声明
 
 本仓库仅聚合第三方开源项目的发布产物，不托管任何 IPA 文件。所有应用的版权与许可证归各自作者所有，安装前请自行确认来源可信。

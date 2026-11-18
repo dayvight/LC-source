@@ -11,7 +11,7 @@
       "bundleIdentifier": "com.hghubx.app",
       "developerName": "zxsos",
       "subtitle": "跨平台短剧客户端，Rust + Tauri 2 构建",
-      "localizedDescription": "<p>用 Rust + Tauri 2 构建的跨平台短剧客户端，支持 Windows / macOS / Linux / Android / iOS。</p><p>iOS 端适配系统圆角与玻璃材质，提供沉浸式竖屏播放。</p>",
+      "localizedDescription": "用 Rust + Tauri 2 构建的跨平台短剧客户端，支持 Windows / macOS / Linux / Android / iOS。\niOS 端适配系统圆角与玻璃材质，提供沉浸式竖屏播放。",
       "iconURL": "https://ghproxy.net/https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/apps/HGhubX/icon.png",
       "tintColor": "#38BDF8",
       "category": "entertainment",
@@ -23,7 +23,8 @@
           "date": "2026-11-18T06:02:05+00:00",
           "downloadURL": "https://ghproxy.net/https://github.com/zxsos/HGhubX/releases/download/v2.2.0/HGhubX_2.2.0_ios.ipa",
           "size": 3886166,
-          "minOSVersion": "15.0"
+          "minOSVersion": "15.0",
+          "localizedDescription": "HGhubX 2.2.0\n\n架构重构 + Android TV / 车机老内核兼容 + 开屏与播放体验全面升级的正式版本。包含 pre.1 / pre.2 及后续全仓审计与性能打磨的全部内容。\n\n新增\n\n• Android TV 独立版（com.hghubx.tv）：Leanback 桌面入口与横屏 Banner、遥控器方向键 / 确认 / 返回 / 媒体键导航、本地 IndexedDB 片库与拼音/标题搜索索引、overscan 安全边距设置。\n• 老 WebView 与车机大屏兼容（#138）：前端构建降级至 chrome66 / safari14.1（含 CSS dvh / color-mix / cascade-layers 回退、经典 iife Worker、ES5 启动看门狗与运行时 API 垫片）；Android 标准版原生层桥接系统状态栏与车机常驻底栏安全区（--native-sat/sab/sal/sar），quick 与正式构建均覆盖 32 位 arm 与 64 位 arm64。\n• 长按加速可换挡（#146）：右上长按 2x 起，按住左右滑每 80px 换一档（2x → 3x → 4x → 6x，来回滑可升可降，每档震动反馈）；上滑后松手锁定当前档位。\n• 设置 → 播放新增「全屏无操作自动隐藏控件」：关 / 3秒 / 5秒 / 10秒（默认 3 秒，暂停时不隐藏）（#146）。\n• 长按操作提示加入「双击暂停播放」说明。\n\n改进\n\n• 开屏零闪烁与冷启动大幅提速：\n• 原生窗口、index.html data-hg-launching 背景锁与开屏层统一锚定 #071218，彻底消除亮色/暗色主题切换时的首尾白屏或灰屏闪烁，以及  未就绪时的空帧跳变；\n• 开屏动画改为全外层独立 GPU 合成层（仅驱动 transform3d + opacity），消除逐帧 SVG 路径重绘与多段缓动顿挫，首帧独占上屏后下一帧并发挂载业务壳；\n• 消除入口二次动态分包瀑布流，并将 Feed + hls.js（524 kB）从首屏壳剥离并行预热，AcceptedApp 关键路径体积缩减 84.6%（降至 113.8 kB），首屏选线与推荐流请求显著提前。\n• 前端渲染与状态隔离：Toast 通知与账号同步状态改为独立订阅，避免全局重渲染；内联播放器全屏与分页请求逻辑收口复用；亮色模式表面层次与对比度优化。\n• 加速提示弱化并入顶部倍速胶囊（「上滑后松手锁定 / 松手锁定」），移除画面中部拖放提示；全屏右上「退出 / 锁定」两键 44×44、间距 12px（#146）；大屏横屏操作栏自动切换双列紧凑布局避免顶边裁切（#138）。 …"
         }
       ],
       "appPermissions": {
