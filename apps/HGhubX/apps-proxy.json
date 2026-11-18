@@ -1,0 +1,35 @@
+{
+  "name": "HGhubX",
+  "subtitle": "跨平台短剧客户端，Rust + Tauri 2 构建",
+  "description": "用 Rust + Tauri 2 构建的跨平台短剧客户端，支持 Windows / macOS / Linux / Android / iOS。\niOS 端适配系统圆角与玻璃材质，提供沉浸式竖屏播放。",
+  "iconURL": "https://ghproxy.net/https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/apps/HGhubX/icon.png",
+  "website": "https://github.com/zxsos/HGhubX",
+  "tintColor": "#38BDF8",
+  "apps": [
+    {
+      "name": "HGhubX",
+      "bundleIdentifier": "com.hghubx.app",
+      "developerName": "zxsos",
+      "subtitle": "跨平台短剧客户端，Rust + Tauri 2 构建",
+      "localizedDescription": "<p>用 Rust + Tauri 2 构建的跨平台短剧客户端，支持 Windows / macOS / Linux / Android / iOS。</p><p>iOS 端适配系统圆角与玻璃材质，提供沉浸式竖屏播放。</p>",
+      "iconURL": "https://ghproxy.net/https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/apps/HGhubX/icon.png",
+      "tintColor": "#38BDF8",
+      "category": "entertainment",
+      "screenshots": [],
+      "versions": [
+        {
+          "version": "2.2.0",
+          "buildVersion": "2.2.0",
+          "date": "2026-11-18T06:02:05+00:00",
+          "downloadURL": "https://ghproxy.net/https://github.com/zxsos/HGhubX/releases/download/v2.2.0/HGhubX_2.2.0_ios.ipa",
+          "size": 3886166,
+          "minOSVersion": "15.0"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      }
+    }
+  ]
+}

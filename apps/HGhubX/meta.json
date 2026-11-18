@@ -1,0 +1,9 @@
+{
+  "bundle": "com.hghubx.app",
+  "developer": "zxsos",
+  "subtitle": "跨平台短剧客户端，Rust + Tauri 2 构建",
+  "description": "用 Rust + Tauri 2 构建的跨平台短剧客户端，支持 Windows / macOS / Linux / Android / iOS。\niOS 端适配系统圆角与玻璃材质，提供沉浸式竖屏播放。",
+  "min_os": "15.0",
+  "tint": "#38BDF8",
+  "category": "entertainment"
+}
