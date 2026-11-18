@@ -18,38 +18,6 @@
       "screenshots": [],
       "versions": [
         {
-          "version": "3.0.34",
-          "buildVersion": "3.0.34",
-          "date": "2026-10-11T10:46:38+00:00",
-          "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.0.34/Breeze-iOS-v3.0.34.ipa",
-          "size": 26102438,
-          "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.0.35",
-          "buildVersion": "3.0.35",
-          "date": "2026-10-18T05:23:12+00:00",
-          "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.0.35/Breeze-iOS-v3.0.35.ipa",
-          "size": 26309164,
-          "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.0.36",
-          "buildVersion": "3.0.36",
-          "date": "2026-10-25T05:46:26+00:00",
-          "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.0.36/Breeze-iOS-v3.0.36.ipa",
-          "size": 26377539,
-          "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.0.37",
-          "buildVersion": "3.0.37",
-          "date": "2026-10-31T09:28:32+00:00",
-          "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.0.37/Breeze-iOS-v3.0.37.ipa",
-          "size": 26431983,
-          "minOSVersion": "15.0"
-        },
-        {
           "version": "3.0.38",
           "buildVersion": "3.0.38",
           "date": "2026-11-15T09:03:41+00:00",
@@ -74,38 +42,6 @@
       "category": "utilities",
       "screenshots": [],
       "versions": [
-        {
-          "version": "1.0.0",
-          "buildVersion": "1.0.0",
-          "date": "2026-11-13T01:45:42+00:00",
-          "downloadURL": "https://github.com/gangz1o/OiiQT/releases/download/v1.0.0/OiiQT-unsigned.ipa",
-          "size": 7979569,
-          "minOSVersion": "18.0"
-        },
-        {
-          "version": "1.0.1",
-          "buildVersion": "1.0.1",
-          "date": "2026-11-13T03:25:21+00:00",
-          "downloadURL": "https://github.com/gangz1o/OiiQT/releases/download/v1.0.1/OiiQT-unsigned.ipa",
-          "size": 7983640,
-          "minOSVersion": "18.0"
-        },
-        {
-          "version": "1.0.2",
-          "buildVersion": "1.0.2",
-          "date": "2026-11-13T05:13:33+00:00",
-          "downloadURL": "https://github.com/gangz1o/OiiQT/releases/download/v1.0.2/OiiQT-unsigned.ipa",
-          "size": 7984132,
-          "minOSVersion": "18.0"
-        },
-        {
-          "version": "1.0.3",
-          "buildVersion": "1.0.3",
-          "date": "2026-11-13T08:19:00+00:00",
-          "downloadURL": "https://github.com/gangz1o/OiiQT/releases/download/v1.0.3/OiiQT-unsigned.ipa",
-          "size": 7985461,
-          "minOSVersion": "18.0"
-        },
         {
           "version": "1.0.4",
           "buildVersion": "1.0.4",

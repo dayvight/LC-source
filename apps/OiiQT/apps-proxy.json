@@ -18,38 +18,6 @@
       "screenshots": [],
       "versions": [
         {
-          "version": "1.0.0",
-          "buildVersion": "1.0.0",
-          "date": "2026-11-13T01:45:42+00:00",
-          "downloadURL": "https://ghproxy.net/https://github.com/gangz1o/OiiQT/releases/download/v1.0.0/OiiQT-unsigned.ipa",
-          "size": 7979569,
-          "minOSVersion": "18.0"
-        },
-        {
-          "version": "1.0.1",
-          "buildVersion": "1.0.1",
-          "date": "2026-11-13T03:25:21+00:00",
-          "downloadURL": "https://ghproxy.net/https://github.com/gangz1o/OiiQT/releases/download/v1.0.1/OiiQT-unsigned.ipa",
-          "size": 7983640,
-          "minOSVersion": "18.0"
-        },
-        {
-          "version": "1.0.2",
-          "buildVersion": "1.0.2",
-          "date": "2026-11-13T05:13:33+00:00",
-          "downloadURL": "https://ghproxy.net/https://github.com/gangz1o/OiiQT/releases/download/v1.0.2/OiiQT-unsigned.ipa",
-          "size": 7984132,
-          "minOSVersion": "18.0"
-        },
-        {
-          "version": "1.0.3",
-          "buildVersion": "1.0.3",
-          "date": "2026-11-13T08:19:00+00:00",
-          "downloadURL": "https://ghproxy.net/https://github.com/gangz1o/OiiQT/releases/download/v1.0.3/OiiQT-unsigned.ipa",
-          "size": 7985461,
-          "minOSVersion": "18.0"
-        },
-        {
           "version": "1.0.4",
           "buildVersion": "1.0.4",
           "date": "2026-11-16T01:54:42+00:00",

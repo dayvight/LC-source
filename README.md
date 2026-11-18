@@ -82,7 +82,8 @@ GITHUB_TOKEN="$(gh auth token)" SOURCE_REPO=dayvight/LC-source python3 scripts/b
 
 ## 版本策略
 
-- 每个应用保留最近 5 个正式版（可在环境变量 `MAX_VERSIONS` 调整）
+- 只保留最新正式版，不提供历史版本回退；需要回退能力时把 `MAX_VERSIONS` 调大（如 `MAX_VERSIONS=5`）
+- 按版本号排序取最高版本，而不是按 release 创建时间
 - 跳过 prerelease 和 draft
 - 只收录 `.ipa` 资源，自动忽略 APK / DMG / EXE 等其它平台构建
 - 版本号统一规范为纯数字（如 `v3.0.38` → `3.0.38`），因为 AltStore 要求如此

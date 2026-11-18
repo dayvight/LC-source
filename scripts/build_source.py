@@ -32,7 +32,7 @@ BRANCH = os.environ.get("SOURCE_BRANCH", "main")
 # overridable: set GH_PROXY=https://<mirror>/ when the default stops working.
 PROXY = os.environ.get("GH_PROXY", "https://ghproxy.net/")
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
-MAX_VERSIONS = int(os.environ.get("MAX_VERSIONS", "5"))
+MAX_VERSIONS = int(os.environ.get("MAX_VERSIONS", "1"))  # 1 = latest only; raise to keep rollback versions
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -158,9 +158,11 @@ def build_app(meta):
             "size": asset["size"],
             "minOSVersion": extra.get("min_os", "15.0"),
         })
-        if len(versions) >= MAX_VERSIONS:
-            break
 
+    # Keep by version number, not by API order: a release re-published later
+    # shouldn't outrank a genuinely higher version.
+    versions.sort(key=version_key, reverse=True)
+    versions = versions[:MAX_VERSIONS]
     versions.sort(key=version_key)
     if not versions:
         print(f"  ! no IPA assets found, skipping")
