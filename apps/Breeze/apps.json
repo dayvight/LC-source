@@ -1,0 +1,67 @@
+{
+  "name": "Breeze",
+  "subtitle": "Flutter 构建的漫画阅读器，插件化提供漫画源",
+  "description": "使用 Flutter 构建的跨平台漫画阅读器，通过插件提供漫画源支持。\n支持 iOS / macOS / Android / Windows / Linux。",
+  "iconURL": "https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/apps/Breeze/icon.png",
+  "website": "https://github.com/breeze-project-org/Breeze",
+  "tintColor": "#EF4444",
+  "apps": [
+    {
+      "name": "Breeze",
+      "bundleIdentifier": "com.zephyr.breeze",
+      "developerName": "deretame",
+      "subtitle": "Flutter 构建的漫画阅读器，插件化提供漫画源",
+      "localizedDescription": "<p>使用 Flutter 构建的跨平台漫画阅读器，通过插件提供漫画源支持。</p><p>支持 iOS / macOS / Android / Windows / Linux。</p>",
+      "iconURL": "https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/apps/Breeze/icon.png",
+      "tintColor": "#EF4444",
+      "category": "entertainment",
+      "screenshots": [],
+      "versions": [
+        {
+          "version": "3.0.34",
+          "buildVersion": "3.0.34",
+          "date": "2026-10-11T10:46:38+00:00",
+          "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.0.34/Breeze-iOS-v3.0.34.ipa",
+          "size": 26102438,
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.0.35",
+          "buildVersion": "3.0.35",
+          "date": "2026-10-18T05:23:12+00:00",
+          "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.0.35/Breeze-iOS-v3.0.35.ipa",
+          "size": 26309164,
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.0.36",
+          "buildVersion": "3.0.36",
+          "date": "2026-10-25T05:46:26+00:00",
+          "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.0.36/Breeze-iOS-v3.0.36.ipa",
+          "size": 26377539,
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.0.37",
+          "buildVersion": "3.0.37",
+          "date": "2026-10-31T09:28:32+00:00",
+          "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.0.37/Breeze-iOS-v3.0.37.ipa",
+          "size": 26431983,
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.0.38",
+          "buildVersion": "3.0.38",
+          "date": "2026-11-15T09:03:41+00:00",
+          "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/Breeze-iOS-v3.0.38.ipa",
+          "size": 27173399,
+          "minOSVersion": "15.0"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      }
+    }
+  ]
+}

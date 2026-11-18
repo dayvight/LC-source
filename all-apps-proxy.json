@@ -1,0 +1,124 @@
+{
+  "name": "LC-source",
+  "subtitle": "我自己的 AltStore 软件源",
+  "description": "个人自用的 AltStore / LiveContainer 源，收录 GitHub 上的开源 IPA 项目。",
+  "iconURL": "https://ghproxy.net/https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/assets/icon.png",
+  "website": "https://github.com/dayvight/LC-source",
+  "tintColor": "#3B82F6",
+  "apps": [
+    {
+      "name": "Breeze",
+      "bundleIdentifier": "com.zephyr.breeze",
+      "developerName": "deretame",
+      "subtitle": "Flutter 构建的漫画阅读器，插件化提供漫画源",
+      "localizedDescription": "<p>使用 Flutter 构建的跨平台漫画阅读器，通过插件提供漫画源支持。</p><p>支持 iOS / macOS / Android / Windows / Linux。</p>",
+      "iconURL": "https://ghproxy.net/https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/apps/Breeze/icon.png",
+      "tintColor": "#EF4444",
+      "category": "entertainment",
+      "screenshots": [],
+      "versions": [
+        {
+          "version": "3.0.34",
+          "buildVersion": "3.0.34",
+          "date": "2026-10-11T10:46:38+00:00",
+          "downloadURL": "https://ghproxy.net/https://github.com/breeze-project-org/Breeze/releases/download/v3.0.34/Breeze-iOS-v3.0.34.ipa",
+          "size": 26102438,
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.0.35",
+          "buildVersion": "3.0.35",
+          "date": "2026-10-18T05:23:12+00:00",
+          "downloadURL": "https://ghproxy.net/https://github.com/breeze-project-org/Breeze/releases/download/v3.0.35/Breeze-iOS-v3.0.35.ipa",
+          "size": 26309164,
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.0.36",
+          "buildVersion": "3.0.36",
+          "date": "2026-10-25T05:46:26+00:00",
+          "downloadURL": "https://ghproxy.net/https://github.com/breeze-project-org/Breeze/releases/download/v3.0.36/Breeze-iOS-v3.0.36.ipa",
+          "size": 26377539,
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.0.37",
+          "buildVersion": "3.0.37",
+          "date": "2026-10-31T09:28:32+00:00",
+          "downloadURL": "https://ghproxy.net/https://github.com/breeze-project-org/Breeze/releases/download/v3.0.37/Breeze-iOS-v3.0.37.ipa",
+          "size": 26431983,
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.0.38",
+          "buildVersion": "3.0.38",
+          "date": "2026-11-15T09:03:41+00:00",
+          "downloadURL": "https://ghproxy.net/https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/Breeze-iOS-v3.0.38.ipa",
+          "size": 27173399,
+          "minOSVersion": "15.0"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      }
+    },
+    {
+      "name": "OiiQT",
+      "bundleIdentifier": "com.gangz1o.oiiqt",
+      "developerName": "gangz1o",
+      "subtitle": "在 iPhone / iPad 上管理 qBittorrent、Transmission 与 MoviePilot",
+      "localizedDescription": "<p>用 SwiftUI 构建的下载服务器管理客户端。</p><p>支持连接 qBittorrent 与 Transmission 管理种子任务、查看流量与存储面板、配置 RSS 自动下载，并可连接 MoviePilot 浏览与搜索影视资源。无会员、无内购、不限服务器数量。</p>",
+      "iconURL": "https://ghproxy.net/https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/apps/OiiQT/icon.png",
+      "tintColor": "#F59E0B",
+      "category": "utilities",
+      "screenshots": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "buildVersion": "1.0.0",
+          "date": "2026-11-13T01:45:42+00:00",
+          "downloadURL": "https://ghproxy.net/https://github.com/gangz1o/OiiQT/releases/download/v1.0.0/OiiQT-unsigned.ipa",
+          "size": 7979569,
+          "minOSVersion": "18.0"
+        },
+        {
+          "version": "1.0.1",
+          "buildVersion": "1.0.1",
+          "date": "2026-11-13T03:25:21+00:00",
+          "downloadURL": "https://ghproxy.net/https://github.com/gangz1o/OiiQT/releases/download/v1.0.1/OiiQT-unsigned.ipa",
+          "size": 7983640,
+          "minOSVersion": "18.0"
+        },
+        {
+          "version": "1.0.2",
+          "buildVersion": "1.0.2",
+          "date": "2026-11-13T05:13:33+00:00",
+          "downloadURL": "https://ghproxy.net/https://github.com/gangz1o/OiiQT/releases/download/v1.0.2/OiiQT-unsigned.ipa",
+          "size": 7984132,
+          "minOSVersion": "18.0"
+        },
+        {
+          "version": "1.0.3",
+          "buildVersion": "1.0.3",
+          "date": "2026-11-13T08:19:00+00:00",
+          "downloadURL": "https://ghproxy.net/https://github.com/gangz1o/OiiQT/releases/download/v1.0.3/OiiQT-unsigned.ipa",
+          "size": 7985461,
+          "minOSVersion": "18.0"
+        },
+        {
+          "version": "1.0.4",
+          "buildVersion": "1.0.4",
+          "date": "2026-11-16T01:54:42+00:00",
+          "downloadURL": "https://ghproxy.net/https://github.com/gangz1o/OiiQT/releases/download/v1.0.4/OiiQT-unsigned.ipa",
+          "size": 8001978,
+          "minOSVersion": "18.0"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      }
+    }
+  ]
+}

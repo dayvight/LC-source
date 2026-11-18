@@ -1,0 +1,6 @@
+# One app per line: <Name> <owner/repo>
+# Optional extra columns: bundle_id min_os tint_color
+#   Breeze breeze-project-org/Breeze com.zephyr.breeze 15.0 #EF4444
+#
+Breeze breeze-project-org/Breeze
+OiiQT gangz1o/OiiQT

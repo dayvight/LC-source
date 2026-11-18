@@ -1,0 +1,9 @@
+{
+  "bundle": "com.gangz1o.oiiqt",
+  "developer": "gangz1o",
+  "subtitle": "在 iPhone / iPad 上管理 qBittorrent、Transmission 与 MoviePilot",
+  "description": "用 SwiftUI 构建的下载服务器管理客户端。\n支持连接 qBittorrent 与 Transmission 管理种子任务、查看流量与存储面板、配置 RSS 自动下载，并可连接 MoviePilot 浏览与搜索影视资源。无会员、无内购、不限服务器数量。",
+  "min_os": "18.0",
+  "tint": "#F59E0B",
+  "category": "utilities"
+}

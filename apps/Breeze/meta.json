@@ -1,0 +1,9 @@
+{
+  "bundle": "com.zephyr.breeze",
+  "developer": "deretame",
+  "subtitle": "Flutter 构建的漫画阅读器，插件化提供漫画源",
+  "description": "使用 Flutter 构建的跨平台漫画阅读器，通过插件提供漫画源支持。\n支持 iOS / macOS / Android / Windows / Linux。",
+  "min_os": "15.0",
+  "tint": "#EF4444",
+  "category": "entertainment"
+}
