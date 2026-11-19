@@ -27,6 +27,7 @@ https://ghproxy.net/https://raw.githubusercontent.com/dayvight/LC-source/refs/he
 | [Breeze](https://github.com/breeze-project-org/Breeze) | `com.zephyr.breeze` | 15.0 | Flutter 构建的漫画阅读器，插件化提供漫画源 |
 | [OiiQT](https://github.com/gangz1o/OiiQT) | `com.gangz1o.oiiqt` | 18.0 | 在 iPhone / iPad 上管理 qBittorrent、Transmission 与 MoviePilot |
 | [HGhubX](https://github.com/zxsos/HGhubX) | `com.hghubx.app` | 15.0 | 跨平台短剧客户端，Rust + Tauri 2 构建 |
+| [WQFiles](https://github.com/kolbicz/WQFiles) | `cz.kolbi.wqfiles` | 26.0 | 文件浏览器与应用数据管理，基于 worse_query |
 
 每个应用也保留了独立的源，位于 `apps/<应用名>/apps.json`。
 

@@ -1,0 +1,9 @@
+{
+  "bundle": "cz.kolbi.wqfiles",
+  "developer": "kolbicz",
+  "subtitle": "iOS 26/27 的文件浏览器与应用数据管理工具",
+  "description": "基于 worse_query 沙盒技术的文件浏览器，无需越狱即可浏览其他应用与系统的容器。\n支持应用数据管理、备份与恢复、缓存清理，界面含简体中文在内的多种语言。",
+  "min_os": "26.0",
+  "tint": "#14B8A6",
+  "category": "utilities"
+}
