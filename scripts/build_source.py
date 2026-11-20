@@ -7,9 +7,7 @@ bundle id, min iOS version and tint colour), pulls each project's GitHub
 releases, and rewrites:
 
   apps/<Name>/apps.json         per-app source
-  apps/<Name>/apps-proxy.json   same, with gh-proxy mirrored asset URLs
   all-apps.json                 combined source
-  all-apps-proxy.json           combined source, gh-proxy mirrored
 
 Metadata (subtitle, description, developer, icon) is kept in
 apps/<Name>/meta.json — edit that file, not the generated sources.
@@ -28,9 +26,6 @@ import zipfile
 
 OWNER_REPO = os.environ.get("SOURCE_REPO", "").strip()  # e.g. "dayvight/LC-source"
 BRANCH = os.environ.get("SOURCE_BRANCH", "main")
-# Mirror used by the *-proxy.json sources. These services come and go, so it is
-# overridable: set GH_PROXY=https://<mirror>/ when the default stops working.
-PROXY = os.environ.get("GH_PROXY", "https://ghproxy.net/")
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 MAX_VERSIONS = int(os.environ.get("MAX_VERSIONS", "1"))  # 1 = latest only; raise to keep rollback versions
 MAX_CHANGELOG = int(os.environ.get("MAX_CHANGELOG", "1200"))  # chars of release notes kept per version
@@ -40,23 +35,6 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def raw_url(path=""):
     base = f"https://raw.githubusercontent.com/{OWNER_REPO}/refs/heads/{BRANCH}"
     return f"{base}/{path}" if path else base
-
-
-RELEASE_DOWNLOAD_RE = re.compile(r"^https://github\.com/[^/]+/[^/]+/releases/download/")
-
-
-def proxify(url):
-    """Mirror asset URLs through gh-proxy.
-
-    Only real file URLs are rewritten: raw assets and release downloads. The
-    second case matters most — the IPA is the largest thing the client fetches,
-    so a proxy build that left it pointing at github.com would break on exactly
-    the network the proxy exists for. Browsable pages (repo website) are left
-    alone.
-    """
-    if url.startswith("https://raw.githubusercontent.com/") or RELEASE_DOWNLOAD_RE.match(url):
-        return PROXY + url
-    return url
 
 
 def api_json(url):
@@ -258,7 +236,6 @@ def build_app(meta):
         "apps": [app],
     }
     write_json(os.path.join(out_dir, "apps.json"), flat)
-    write_json(os.path.join(out_dir, "apps-proxy.json"), deep_proxify(flat))
 
     # keep icon.png alongside the source if the repo doesn't have one yet
     ensure_icon(out_dir, name, repo, versions[-1]["downloadURL"])
@@ -345,16 +322,6 @@ def cgbi_to_png(data):
             + chunk(b"IDAT", zlib.compress(bytes(out), 9)) + chunk(b"IEND", b""))
 
 
-def deep_proxify(obj):
-    if isinstance(obj, dict):
-        return {k: deep_proxify(v) for k, v in obj.items()}
-    if isinstance(obj, list):
-        return [deep_proxify(v) for v in obj]
-    if isinstance(obj, str):
-        return proxify(obj)
-    return obj
-
-
 def write_json(path, data):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -403,7 +370,6 @@ def main():
         "apps": built,
     }
     write_json(os.path.join(ROOT, "all-apps.json"), combined)
-    write_json(os.path.join(ROOT, "all-apps-proxy.json"), deep_proxify(combined))
     print(f"\n✔ wrote {len(built)} app(s) to all-apps.json")
 
 

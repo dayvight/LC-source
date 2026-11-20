@@ -10,14 +10,6 @@
 https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/all-apps.json
 ```
 
-无法直连 GitHub 时，用镜像版（图标与 IPA 下载也走镜像）：
-
-```
-https://ghproxy.net/https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/all-apps-proxy.json
-```
-
-镜像服务时有时无。若上述地址失效，可换任意 gh-proxy 类服务，只需把前缀换掉；或者在本地重新生成时用 `GH_PROXY=https://<新镜像>/ python3 scripts/build_source.py` 指定。
-
 支持 AltStore、SideStore、LiveContainer、Feather 等兼容客户端。
 
 ## 当前收录
@@ -67,9 +59,7 @@ apps/<应用名>/
   meta.json                  应用元数据（手写）
   icon.png                   图标（自动提取，可手动替换）
   apps.json                  生成的单应用源
-  apps-proxy.json            同上，资源走 gh-proxy
 all-apps.json                生成的总源
-all-apps-proxy.json          总源的 gh-proxy 镜像
 assets/icon.png              源图标
 scripts/build_source.py      构建脚本
 ```
