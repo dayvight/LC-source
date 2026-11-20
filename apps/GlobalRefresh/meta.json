@@ -1,0 +1,9 @@
+{
+  "bundle": "com.yoroin.globalrefresh",
+  "developer": "Yoroin",
+  "subtitle": "全局高刷悬浮窗：基于画中画的 ProMotion 辅助工具",
+  "description": "基于 iOS 画中画的悬浮窗工具，可辅助 ProMotion 设备与原本被限制在 80Hz 左右的 App 获得最高 120Hz 的自适应刷新率。\n支持自定义悬浮窗大小（可完全隐藏）、后台保活，并可在其他 App 开启画中画时共存。",
+  "min_os": "15.0",
+  "tint": "#2563EB",
+  "category": "utilities"
+}
