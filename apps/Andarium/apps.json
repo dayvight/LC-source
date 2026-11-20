@@ -1,0 +1,36 @@
+{
+  "name": "Andarium",
+  "subtitle": "在 iOS 上原生运行真实 Linux 内核",
+  "description": "在 iPhone / iPad 上原生运行真实 Linux 内核的实验性项目，可在设备上启动 Guest 系统。\n需要 iOS 27 及以上；安装包较大（约 1 GB）。",
+  "iconURL": "https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/apps/Andarium/icon.png",
+  "website": "https://github.com/imxieyi/Kernarium",
+  "tintColor": "#2DD4BF",
+  "apps": [
+    {
+      "name": "Andarium",
+      "bundleIdentifier": "com.imxieyi.andarium",
+      "developerName": "imxieyi",
+      "subtitle": "在 iOS 上原生运行真实 Linux 内核",
+      "localizedDescription": "在 iPhone / iPad 上原生运行真实 Linux 内核的实验性项目，可在设备上启动 Guest 系统。\n需要 iOS 27 及以上；安装包较大（约 1 GB）。",
+      "iconURL": "https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/apps/Andarium/icon.png",
+      "tintColor": "#2DD4BF",
+      "category": "developer",
+      "screenshots": [],
+      "versions": [
+        {
+          "version": "1.0.15",
+          "buildVersion": "1.0.15",
+          "date": "2026-11-18T19:26:48+00:00",
+          "downloadURL": "https://github.com/imxieyi/Kernarium/releases/download/1.0b15-release/Andarium-1.0-15.ipa",
+          "size": 1061900449,
+          "minOSVersion": "27.0",
+          "localizedDescription": "Release IPA\nThe IPA must be sideloaded with Increased Memory Limit and Extended Virtual Addressing entitlements. It also supports experimental JIT via StikDebug.\n\nPrebuilt artifacts\n• android-6.18-…-vd2.tar.gz: the accepted Android kernel bundle. Extract it into .build/kernel/artifacts/.\n• lineage24-…-r28.tar.gz: the accepted Android system release. Extract it anywhere, then run android/lineage-24/tools/install-release.py --source /lineage24-mainline6.18-4k-20261115-los24-r28."
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      }
+    }
+  ]
+}

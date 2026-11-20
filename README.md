@@ -28,6 +28,7 @@ https://ghproxy.net/https://raw.githubusercontent.com/dayvight/LC-source/refs/he
 | [OiiQT](https://github.com/gangz1o/OiiQT) | `com.gangz1o.oiiqt` | 18.0 | 在 iPhone / iPad 上管理 qBittorrent、Transmission 与 MoviePilot |
 | [HGhubX](https://github.com/zxsos/HGhubX) | `com.hghubx.app` | 15.0 | 跨平台短剧客户端，Rust + Tauri 2 构建 |
 | [WQFiles](https://github.com/kolbicz/WQFiles) | `cz.kolbi.wqfiles` | 26.0 | 文件浏览器与应用数据管理，基于 worse_query |
+| [Andarium](https://github.com/imxieyi/Kernarium) | `com.imxieyi.andarium` | 27.0 | 在 iOS 上原生运行真实 Linux 内核（安装包约 1 GB） |
 
 每个应用也保留了独立的源，位于 `apps/<应用名>/apps.json`。
 

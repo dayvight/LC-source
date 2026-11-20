@@ -75,14 +75,25 @@ def api_json(url):
         os.unlink(path)
 
 
+VERSION_TAG_RE = re.compile(
+    r"^[vV]?(\d+(?:\.\d+)*)(?:[.\-_ ]?(?:b|beta|rc|a|alpha|pre|p|build)\.?(\d+))?",
+    re.IGNORECASE)
+
+
 def norm_version(tag):
-    out = []
-    for part in tag.lstrip("vV").split("."):
-        num = "".join(c for c in part if c.isdigit())
-        if not num:
-            break
-        out.append(str(int(num)))
-    return ".".join(out) if out else tag.lstrip("vV")
+    """Turn a release tag into the numeric version AltStore requires.
+
+    Handles plain tags (v3.0.38) and ones carrying a beta/build counter, which
+    used to collapse into a wrong number: "1.0b15-release" became "1.15"
+    instead of "1.0.15".
+    """
+    m = VERSION_TAG_RE.match(tag.strip())
+    if not m:
+        return tag.strip().lstrip("vV") or tag
+    parts = [str(int(p)) for p in m.group(1).split(".")]
+    if m.group(2):
+        parts.append(str(int(m.group(2))))
+    return ".".join(parts)
 
 
 MD_IMAGE_RE = re.compile(r"!\[[^\]]*\]\([^)]*\)")

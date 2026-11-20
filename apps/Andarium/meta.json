@@ -1,0 +1,9 @@
+{
+  "bundle": "com.imxieyi.andarium",
+  "developer": "imxieyi",
+  "subtitle": "在 iOS 上原生运行真实 Linux 内核",
+  "description": "在 iPhone / iPad 上原生运行真实 Linux 内核的实验性项目，可在设备上启动 Guest 系统。\n需要 iOS 27 及以上；安装包较大（约 1 GB）。",
+  "min_os": "27.0",
+  "tint": "#2DD4BF",
+  "category": "developer"
+}
