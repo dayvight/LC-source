@@ -82,6 +82,8 @@ scripts/build_source.py      构建脚本
 
 已知限制：`bundleIdentifier` 和 `minOSVersion` 来自手写的 `meta.json`，不会在每次构建时重新解包 IPA 核对。上游哪天提高了最低系统版本，需要手动改 `meta.json`。
 
+`version` 和 `buildVersion` 则**每次构建都从 IPA 里的 `Info.plist` 读取**（`CFBundleShortVersionString` / `CFBundleVersion`），不再用 release tag 猜。原因是 AltStore/SideStore 安装前会校验这两个值必须和 IPA 完全一致，对不上就报「does not match the build number specified by the source」并拒绝安装。读取只取 zip 的中央目录和 `Info.plist` 那几个字节（HTTP Range），不会下载整个 IPA。
+
 ## 本地重建
 
 ```bash

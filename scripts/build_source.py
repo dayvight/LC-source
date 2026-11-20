@@ -18,6 +18,7 @@ In Actions:   the token is provided automatically.
 import io
 import json
 import os
+import plistlib
 import re
 import subprocess
 import sys
@@ -166,6 +167,86 @@ def pick_asset(assets, name):
     return cands[0]
 
 
+class RangeFile(io.RawIOBase):
+    """Read-only seekable file over HTTP range requests.
+
+    Lets us pull one entry out of an IPA without downloading it — which matters
+    when the IPA is over a gigabyte.
+    """
+
+    BLOCK = 256 * 1024
+
+    def __init__(self, url):
+        self.url = url
+        self._blocks = {}
+        self._pos = 0
+        head = subprocess.run(["curl", "-sIL", "--max-time", "60", url],
+                              capture_output=True, text=True).stdout
+        lengths = [line.split(":", 1)[1].strip() for line in head.splitlines()
+                   if line.lower().startswith("content-length")]
+        if not lengths:
+            raise RuntimeError(f"no content-length for {url}")
+        self._size = int(lengths[-1])
+
+    def readable(self):
+        return True
+
+    def seekable(self):
+        return True
+
+    def tell(self):
+        return self._pos
+
+    def seek(self, offset, whence=io.SEEK_SET):
+        if whence == io.SEEK_SET:
+            self._pos = offset
+        elif whence == io.SEEK_CUR:
+            self._pos += offset
+        else:
+            self._pos = self._size + offset
+        return self._pos
+
+    def _block(self, index):
+        if index not in self._blocks:
+            start = index * self.BLOCK
+            end = min(start + self.BLOCK, self._size) - 1
+            run = subprocess.run(["curl", "-sfL", "--max-time", "180",
+                                  "-r", f"{start}-{end}", self.url], capture_output=True)
+            if run.returncode != 0 or not run.stdout:
+                raise RuntimeError(f"range request failed ({run.returncode})")
+            self._blocks[index] = run.stdout
+        return self._blocks[index]
+
+    def read(self, n=-1):
+        if n is None or n < 0:
+            n = self._size - self._pos
+        chunks = []
+        while n > 0 and self._pos < self._size:
+            index, offset = divmod(self._pos, self.BLOCK)
+            chunk = self._block(index)[offset:offset + n]
+            if not chunk:
+                break
+            chunks.append(chunk)
+            self._pos += len(chunk)
+            n -= len(chunk)
+        return b"".join(chunks)
+
+
+def ipa_versions(url):
+    """CFBundleShortVersionString / CFBundleVersion of the app inside an IPA."""
+    try:
+        with zipfile.ZipFile(RangeFile(url)) as archive:
+            plists = [n for n in archive.namelist() if n.endswith(".app/Info.plist")]
+            if not plists:
+                return {}
+            info = plistlib.loads(archive.read(plists[0]))
+    except Exception as e:  # noqa: BLE001 - fall back to the tag-derived version
+        print(f"  ! could not read Info.plist: {e}", file=sys.stderr)
+        return {}
+    return {key: info.get(key) for key in ("CFBundleShortVersionString", "CFBundleVersion")}
+
+
+
 def build_app(meta):
     name, repo = meta["name"], meta["repo"]
     extra = load_meta(name)
@@ -184,7 +265,7 @@ def build_app(meta):
             continue
         seen.add(ver)
         versions.append({
-            "version": ver,
+            "version": ver,       # from the tag; replaced by the IPA's own value below
             "buildVersion": ver,
             "date": rel["published_at"].replace("Z", "+00:00"),
             "downloadURL": f"https://github.com/{repo}/releases/download/"
@@ -202,6 +283,15 @@ def build_app(meta):
     if not versions:
         print(f"  ! no IPA assets found, skipping")
         return None
+
+    # Clients refuse to install when the source's version/buildVersion disagree
+    # with the IPA's Info.plist, so take them from the bundle itself.
+    for version in versions:
+        tag_version = version["version"]
+        info = ipa_versions(version["downloadURL"])
+        version["version"] = str(info.get("CFBundleShortVersionString") or tag_version)
+        version["buildVersion"] = str(info.get("CFBundleVersion") or version["version"])
+        print(f"  tag {tag_version} -> {version['version']} ({version['buildVersion']})")
 
     print(f"  {len(versions)} version(s): {[v['version'] for v in versions]}")
     icon_url = raw_url(f"apps/{name}/icon.png")

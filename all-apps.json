@@ -19,7 +19,7 @@
       "versions": [
         {
           "version": "3.0.38",
-          "buildVersion": "3.0.38",
+          "buildVersion": "2225",
           "date": "2026-11-15T09:03:41+00:00",
           "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/Breeze-iOS-v3.0.38.ipa",
           "size": 27173399,
@@ -45,7 +45,7 @@
       "versions": [
         {
           "version": "1.0.4",
-          "buildVersion": "1.0.4",
+          "buildVersion": "22",
           "date": "2026-11-16T01:54:42+00:00",
           "downloadURL": "https://github.com/gangz1o/OiiQT/releases/download/v1.0.4/OiiQT-unsigned.ipa",
           "size": 8001978,
@@ -97,7 +97,7 @@
       "versions": [
         {
           "version": "0.9.19",
-          "buildVersion": "0.9.19",
+          "buildVersion": "113",
           "date": "2026-11-20T01:16:50+00:00",
           "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.19/WQFiles.ipa",
           "size": 2182170,
@@ -122,8 +122,8 @@
       "screenshots": [],
       "versions": [
         {
-          "version": "1.0.15",
-          "buildVersion": "1.0.15",
+          "version": "1.0",
+          "buildVersion": "15",
           "date": "2026-11-18T19:26:48+00:00",
           "downloadURL": "https://github.com/imxieyi/Kernarium/releases/download/1.0b15-release/Andarium-1.0-15.ipa",
           "size": 1061900449,
@@ -149,7 +149,7 @@
       "versions": [
         {
           "version": "1.1.2",
-          "buildVersion": "1.1.2",
+          "buildVersion": "2026112009",
           "date": "2026-11-20T10:21:33+00:00",
           "downloadURL": "https://github.com/Yoroin/GlobalRefresh-PiP/releases/download/v1.1.2/GlobalRefresh_1.1.2_2026112009_unsigned.ipa",
           "size": 7870265,
