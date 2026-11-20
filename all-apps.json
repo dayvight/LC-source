@@ -96,13 +96,13 @@
       "screenshots": [],
       "versions": [
         {
-          "version": "0.9.18",
-          "buildVersion": "0.9.18",
-          "date": "2026-11-17T15:21:21+00:00",
-          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.18/WQFiles.ipa",
-          "size": 2171189,
+          "version": "0.9.19",
+          "buildVersion": "0.9.19",
+          "date": "2026-11-20T01:16:50+00:00",
+          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.19/WQFiles.ipa",
+          "size": 2182170,
           "minOSVersion": "26.0",
-          "localizedDescription": "Requires: iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. Not supported: iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see Tested devices.\nNeeds: a sideloading tool that keeps the App Group entitlement; see Signing in the README.\n\nWorse Query Files 0.9.18\n\nYour own inspectors, your own cleaning targets, and Japanese.\n\nNew\n\n• Custom inspectors (#45): small JavaScript programs that show a file's contents your way. Long-press a file → Open As → Custom Inspector…. WQ Files ships only the runtime; the inspectors are yours.\n• Install: open a .zip holding an inspector with WQ Files (share sheet, AirDrop, Files app), or copy its folder into Settings → Inspectors. Installing one with the same name again updates it.\n• Write one: a folder with manifest.json and inspect.js. The script gets the file as bytes, as text and, for property lists, already parsed, and returns sections with rows or text. A data.json can hold your own lookup tables. Two examples and the full format are in the README.\n• Results: tap a value to copy it; Share sends everything as text. Script errors show with their line number. …"
+          "localizedDescription": "Requires: iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. Not supported: iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see Tested devices.\nNeeds: a sideloading tool that keeps the App Group entitlement; see Signing in the README.\n\nWorse Query Files 0.9.19\n\nA small fix release, plus optional App Store icons.\n\nNew\n\n• Settings → App Store Icons (off by default): other apps' icons can't be read with worse_query, so WQ Files can fetch them from Apple's public App Store lookup instead. This sends the bundle ids of your installed apps and your region to Apple. Sideloaded apps and apps that were removed from the App Store keep the placeholder. Icons are stored in WQ Files (about 7 KB each, not backed up); turning the setting off deletes them.\n\nFixed\n\n• Apps with one-word bundle ids like Pinterest (pinterest) showed \"container identity unavailable\" and 0 KB, and couldn't be opened, backed up or cleared. They work now. …"
         }
       ],
       "appPermissions": {
