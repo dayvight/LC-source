@@ -22,6 +22,7 @@ https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/all-apps.js
 | [WQFiles](https://github.com/kolbicz/WQFiles) | `cz.kolbi.wqfiles` | 26.0 | 文件浏览器与应用数据管理，基于 worse_query |
 | [Andarium](https://github.com/imxieyi/Kernarium) | `com.imxieyi.andarium` | 27.0 | 在 iOS 上原生运行真实 Linux 内核（安装包约 1 GB） |
 | [GlobalRefresh](https://github.com/Yoroin/GlobalRefresh-PiP) | `com.yoroin.globalrefresh` | 15.0 | 全局高刷悬浮窗，基于画中画辅助解锁 ProMotion 120Hz |
+| [MoviePilotLite](https://github.com/singleton-altman/MoviePilotLite) | `com.altman.moviepilot` | 15.0 | MoviePilot 的 Flutter 移动客户端 |
 
 每个应用也保留了独立的源，位于 `apps/<应用名>/apps.json`。
 

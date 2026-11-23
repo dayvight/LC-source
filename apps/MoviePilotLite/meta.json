@@ -1,0 +1,9 @@
+{
+  "bundle": "com.altman.moviepilot",
+  "developer": "singleton-altman",
+  "subtitle": "MoviePilot 的 Flutter 移动客户端",
+  "description": "MoviePilot 的移动端客户端，基于 Flutter 构建，支持 iOS 与 Android。\n可浏览、订阅与追踪影视内容，iOS 端提供订阅日历 Widget。",
+  "min_os": "15.0",
+  "tint": "#8B5CF6",
+  "category": "entertainment"
+}

@@ -18,13 +18,13 @@
       "screenshots": [],
       "versions": [
         {
-          "version": "1.0",
-          "buildVersion": "15",
-          "date": "2026-11-18T19:26:48+00:00",
-          "downloadURL": "https://github.com/imxieyi/Kernarium/releases/download/1.0b15-release/Andarium-1.0-15.ipa",
-          "size": 1061900449,
+          "version": "1.1",
+          "buildVersion": "16",
+          "date": "2026-11-22T18:45:39+00:00",
+          "downloadURL": "https://github.com/imxieyi/Kernarium/releases/download/andarium-1.1/Andarium-1.1-16.ipa",
+          "size": 1248669708,
           "minOSVersion": "27.0",
-          "localizedDescription": "Release IPA\nThe IPA must be sideloaded with Increased Memory Limit and Extended Virtual Addressing entitlements. It also supports experimental JIT via StikDebug.\n\nPrebuilt artifacts\n• android-6.18-…-vd2.tar.gz: the accepted Android kernel bundle. Extract it into .build/kernel/artifacts/.\n• lineage24-…-r28.tar.gz: the accepted Android system release. Extract it anywhere, then run android/lineage-24/tools/install-release.py --source /lineage24-mainline6.18-4k-20261115-los24-r28."
+          "localizedDescription": "What's new\n• Root access: apps you allow in Magisk can now run as root. Turn on Root access on Home, and the next start installs the official Magisk app.\n• AOT: Android's system libraries now run from code translated ahead of time, so Android runs faster. It is on by default, in Performance on Home.\n• 120 Hz: on a ProMotion iPhone or iPad, Android can now run at 120 Hz for smoother motion, using more battery. It is off until you turn it on in Performance on Home.\n• Add to Home Screen: on iPhone and iPad with iOS 27, put an Android app's icon on the Home Screen, and open the app from there, from Shortcuts or with Siri.\n• VoiceOver and TalkBack: Andarium now works with VoiceOver. To hear Android's screen, turn on TalkBack under Accessibility.\n• Frame rate when hot: Android now lowers the frame rate only when the device is very hot. To keep it even then, set When hot to Full frame rate under Performance.\n• Text messages: Android can now receive a text message that you write. Choose Send text message… in Settings while Android is running, and it arrives as an incoming text. …"
         }
       ],
       "appPermissions": {

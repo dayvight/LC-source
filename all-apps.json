@@ -122,13 +122,13 @@
       "screenshots": [],
       "versions": [
         {
-          "version": "1.0",
-          "buildVersion": "15",
-          "date": "2026-11-18T19:26:48+00:00",
-          "downloadURL": "https://github.com/imxieyi/Kernarium/releases/download/1.0b15-release/Andarium-1.0-15.ipa",
-          "size": 1061900449,
+          "version": "1.1",
+          "buildVersion": "16",
+          "date": "2026-11-22T18:45:39+00:00",
+          "downloadURL": "https://github.com/imxieyi/Kernarium/releases/download/andarium-1.1/Andarium-1.1-16.ipa",
+          "size": 1248669708,
           "minOSVersion": "27.0",
-          "localizedDescription": "Release IPA\nThe IPA must be sideloaded with Increased Memory Limit and Extended Virtual Addressing entitlements. It also supports experimental JIT via StikDebug.\n\nPrebuilt artifacts\n• android-6.18-…-vd2.tar.gz: the accepted Android kernel bundle. Extract it into .build/kernel/artifacts/.\n• lineage24-…-r28.tar.gz: the accepted Android system release. Extract it anywhere, then run android/lineage-24/tools/install-release.py --source /lineage24-mainline6.18-4k-20261115-los24-r28."
+          "localizedDescription": "What's new\n• Root access: apps you allow in Magisk can now run as root. Turn on Root access on Home, and the next start installs the official Magisk app.\n• AOT: Android's system libraries now run from code translated ahead of time, so Android runs faster. It is on by default, in Performance on Home.\n• 120 Hz: on a ProMotion iPhone or iPad, Android can now run at 120 Hz for smoother motion, using more battery. It is off until you turn it on in Performance on Home.\n• Add to Home Screen: on iPhone and iPad with iOS 27, put an Android app's icon on the Home Screen, and open the app from there, from Shortcuts or with Siri.\n• VoiceOver and TalkBack: Andarium now works with VoiceOver. To hear Android's screen, turn on TalkBack under Accessibility.\n• Frame rate when hot: Android now lowers the frame rate only when the device is very hot. To keep it even then, set When hot to Full frame rate under Performance.\n• Text messages: Android can now receive a text message that you write. Choose Send text message… in Settings while Android is running, and it arrives as an incoming text. …"
         }
       ],
       "appPermissions": {
@@ -155,6 +155,32 @@
           "size": 7878284,
           "minOSVersion": "15.0",
           "localizedDescription": "全局高刷 1.1.2（26.11.20）\n\n本版本提供正式版通用未签名 IPA，可通过牛蛙助手、AltStore、Sideloadly 等工具自行签名安装。\n\n构建号：2026112101\n\nIPA 文件：GlobalRefresh_1.1.2_2026112101_unsigned.ipa\n\nSHA-256：776b590301dc70314323d8f5b0d3055d6d04e7b093b184d8c8d05eb363537e74\n\n重新打包说明（26.11.21）\n\n构建号更新为 2026112101，恢复 iPhone 和 iPad 的图标文件索引，解决部分签名工具导入 IPA 后不显示应用图标的问题。主包 Info.plist 仍为 XML；程序、悬浮窗逻辑及图标资源均未改动。\n\n遇到签名工具内图标空白的用户，请下载新版附件后重新导入。已正常安装使用的用户无需仅为此重新安装。\n\n更新内容\n\n• \\* 修复 iOS 16 及以上悬浮窗关闭按钮偶尔重新出现的问题（即屏幕中间的水滴图标）\n• \\* 修复部分 iOS 15 设备无法启动悬浮窗的问题，恢复原生启动流程\n• 优化画中画并存，增加当前会话内的检查和有限补试；系统暂时挂起悬浮窗时，不再误判为关闭\n• 默认 VideoCall 与仅 PiP 保活组合的内容更新由 60fps 调整为 30fps，减少后台刷新开销\n• 优化小屏首页布局，避免启动按钮被底栏遮挡\n• 新增当前 App 的运存和线程数显示\n• 修复线程统计资源未释放、离开帧率演示页后刷新驱动未清理的问题；PlayerLayer 兼容方案改为在后台准备视频素材，避免阻塞界面\n• 支持导出和分享诊断日志；减少日志重复写盘，覆盖更新后保留已有退出记录和系统诊断\n• 优化快捷指令链接识别，保留原有入口；修复切换更新渠道时可能显示旧结果的问题，支持检测同版本的新构建\n\n来源与署名\n\n感谢 CaiWanFeng 提供原始 PiP 示例。本项目由 Yoroin 在此基础上继续开发和维护。\n\n原 Demo 项目：CaiWanFeng/PiP\n\n当前项目：Yoroin/GlobalRefresh-PiP\n\n基于本项目继续开发或分发时，请保留原作者、后续维护者及对应项目地址，并注明代码来源。\n\n自签说明\n\n此 IPA 不绑定个人证书，主程序和内嵌框架均未签名，也不含 embedded.mobileprovision 或 _CodeSignature。安装前请使用自己的 Apple ID 或证书签名。"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      }
+    },
+    {
+      "name": "MoviePilotLite",
+      "bundleIdentifier": "com.altman.moviepilot",
+      "developerName": "singleton-altman",
+      "subtitle": "MoviePilot 的 Flutter 移动客户端",
+      "localizedDescription": "MoviePilot 的移动端客户端，基于 Flutter 构建，支持 iOS 与 Android。\n可浏览、订阅与追踪影视内容，iOS 端提供订阅日历 Widget。",
+      "iconURL": "https://raw.githubusercontent.com/dayvight/LC-source/refs/heads/main/apps/MoviePilotLite/icon.png",
+      "tintColor": "#8B5CF6",
+      "category": "entertainment",
+      "screenshots": [],
+      "versions": [
+        {
+          "version": "1.3.3",
+          "buildVersion": "42",
+          "date": "2026-11-20T06:01:32+00:00",
+          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.3.3-2026-11-20/ios-v1.3.3-2026-11-20.ipa",
+          "size": 37758534,
+          "minOSVersion": "15.0",
+          "localizedDescription": "MoviePilot Release\n\n• Version: 1.3.3\n• Build Date: 2026-11-20\n• Android: Signed universal APK\n• Android: Signed arm64-v8a APK\n• iOS: Unsigned IPA\n\niOS 安装说明：\n• IPA 为未签名包\n• 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\nWhat's Changed\n• fix(push): iOS 设置 JPush Alias 报 6002 超时且提示原始异常串 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/166\n• feat: 适配 Vue 插件（PVE 守护神 / 爱快路由 / 豆瓣档案 / 夸克网盘 / 随机图床） by @xijin285 in https://github.com/singleton-altman/MoviePilotLite/pull/167\n• feat(media_detail): 豆瓣评论与详情页 UI 优化 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/169\n• feat(media_detail): 完善豆瓣评论列表 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/175\n• release: v1.3.2 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/176\n• style(download): 重设计下载资源弹窗 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/180\n• feat(widget): 订阅日历小组件支持多尺寸并修复 ColorOS 尺寸错乱 by @xijin285 in https://github.com/singleton-altman/MoviePilotLite/pull/181\n• release: v1.3.3 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/183 …"
         }
       ],
       "appPermissions": {

@@ -8,3 +8,4 @@ HGhubX zxsos/HGhubX
 WQFiles kolbicz/WQFiles
 Andarium imxieyi/Kernarium
 GlobalRefresh Yoroin/GlobalRefresh-PiP
+MoviePilotLite singleton-altman/MoviePilotLite

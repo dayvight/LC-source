@@ -55,18 +55,18 @@ def api_json(url):
 
 
 VERSION_TAG_RE = re.compile(
-    r"^[vV]?(\d+(?:\.\d+)*)(?:[.\-_ ]?(?:b|beta|rc|a|alpha|pre|p|build)\.?(\d+))?",
+    r"(\d+(?:\.\d+)+)(?:[.\-_ ]?(?:b|beta|rc|a|alpha|pre|p|build)\.?(\d+))?",
     re.IGNORECASE)
 
 
 def norm_version(tag):
-    """Turn a release tag into the numeric version AltStore requires.
+    """Turn a release tag into a numeric version, used to order releases.
 
-    Handles plain tags (v3.0.38) and ones carrying a beta/build counter, which
-    used to collapse into a wrong number: "1.0b15-release" became "1.15"
-    instead of "1.0.15".
+    Finds the version wherever it sits in the tag, so "release-v1.3.3-2026-11-20"
+    yields 1.3.3. Also folds beta/build counters into the number, because
+    "1.0b15-release" used to collapse into "1.15" instead of "1.0.15".
     """
-    m = VERSION_TAG_RE.match(tag.strip())
+    m = VERSION_TAG_RE.search(tag.strip())
     if not m:
         return tag.strip().lstrip("vV") or tag
     parts = [str(int(p)) for p in m.group(1).split(".")]
